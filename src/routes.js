@@ -11,7 +11,7 @@ export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Header />
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route path="/movies" component={MoviesPage} />

@@ -6,3 +6,10 @@ export function toggleSidebarMenu(isSidebarOpened) {
     isSidebarOpened,
   };
 }
+
+export function setCurrentPage(currentPage) {
+  return {
+    type: actionTypes.SET_CURRENT_PAGE,
+    currentPage,
+  };
+}

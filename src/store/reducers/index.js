@@ -1,7 +1,11 @@
 import { combineReducers } from "redux";
 
-import uiState from "./uiState";
+import generalUiState from "./ui/generalUiState";
+import moviesPageUiState from "./ui/moviesPageUiState";
+import moviesRequestsState from "./ui/moviesRequestsState";
 
 export default combineReducers({
-  uiState,
+  generalUiState,
+  moviesPageUiState,
+  moviesRequestsState,
 });

@@ -1,7 +1,10 @@
 import React from "react";
 import { Offcanvas, Nav } from "react-bootstrap";
+import { connect } from "react-redux";
 
-export default function NavbarOffcanvas() {
+import * as generalUiStateActions from "../../store/actions/generalUiState";
+
+const NavbarOffcanvas = ({ setCurrentPage, currentPage }) => {
   return (
     <>
       <Offcanvas.Header closeButton>
@@ -11,6 +14,7 @@ export default function NavbarOffcanvas() {
         <Nav.Item>
           <Nav.Link
             onClick={() => {
+              setCurrentPage("movies");
               window.location.href = "/movies";
             }}
           >
@@ -20,6 +24,7 @@ export default function NavbarOffcanvas() {
         <Nav.Item>
           <Nav.Link
             onClick={() => {
+              setCurrentPage("tv");
               window.location.href = "/tv";
             }}
           >
@@ -29,4 +34,15 @@ export default function NavbarOffcanvas() {
       </Offcanvas.Body>
     </>
   );
-}
+};
+
+const mapStateToProps = (state) => ({
+  currentPage: state.generalUiState.currentPage,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentPage: (currentPage) =>
+    dispatch(generalUiStateActions.setCurrentPage(currentPage)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavbarOffcanvas);

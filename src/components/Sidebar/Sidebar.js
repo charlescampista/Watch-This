@@ -1,9 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Offcanvas, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
-import * as uiActions from "../../store/actions/uiState";
+import * as uiActions from "../../store/actions/generalUiState";
 const Sidebar = ({ isSidebarOpened, toggleSidebarMenu }) => {
   return (
     <aside>
@@ -42,7 +41,7 @@ const Sidebar = ({ isSidebarOpened, toggleSidebarMenu }) => {
 };
 
 const mapStateToProps = (state) => ({
-  isSidebarOpened: state.uiState.isSidebarOpened,
+  isSidebarOpened: state.generalUiState.isSidebarOpened,
 });
 
 const mapDispatchToProps = (dispatch) => ({
