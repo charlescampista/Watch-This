@@ -4,6 +4,8 @@ import MainPage from "./pages/MainPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Sidebar from "./components/Sidebar/Sidebar";
+import MoviesPage from "./pages/Movies/MoviesPage";
+import TVPage from "./pages/TV/TVPage";
 
 export default function AppRoutes() {
   return (
@@ -11,7 +13,9 @@ export default function AppRoutes() {
       <Header />
       <Sidebar />
       <Switch>
-        <Route path="/" component={MainPage} />
+        <Route exact path="/" component={MainPage} />
+        <Route path="/movies" component={MoviesPage} />
+        <Route path="/tv" component={TVPage} />
       </Switch>
       <Footer />
     </BrowserRouter>
