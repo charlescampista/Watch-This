@@ -30,7 +30,7 @@ const MoviesPage = ({ selectedTab, changeMoviesTab }) => {
       </nav>
 
       <section>
-        <ContentPresentation teste="Mensagem" />
+        <ContentPresentation />
       </section>
     </main>
   );

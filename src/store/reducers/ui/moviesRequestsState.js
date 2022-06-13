@@ -3,6 +3,7 @@ import actionTypes from "../../actionTypes";
 const INITIAL_STATE = {
   isLoading: false,
   movies: [],
+  page: 1,
 };
 
 export default function moviesRequestsState(state = INITIAL_STATE, action) {
@@ -10,7 +11,8 @@ export default function moviesRequestsState(state = INITIAL_STATE, action) {
     return {
       ...state,
       isLoading: action.isLoading,
-      movies: action.movies,
+      movies: [...state.movies, ...action.movies],
+      page: action.page,
     };
   }
   return state;

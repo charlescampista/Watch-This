@@ -7,9 +7,9 @@ export const getUpcomingMovies = async () => {
   return result;
 };
 
-export const getPopularMovies = async () => {
+export const getPopularMovies = async (page) => {
   const result = await api.get(
-    `/movie/popular?api_key=${process.env.REACT_APP_API_KEY}`
+    `/movie/popular?page=${page}&api_key=${process.env.REACT_APP_API_KEY}`
   );
   return result;
 };
