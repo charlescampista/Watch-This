@@ -13,7 +13,9 @@ export default function AppRoutes() {
       <Header />
       {/* <Sidebar /> */}
       <Switch>
-        <Route exact path="/" component={MainPage} />
+        <Route exact path="/" component={MoviesPage} />
+        {/* <Route exact path="/" component={MainPage} />
+        <Route path="/movies" component={MoviesPage} />*/}
         <Route path="/movies" component={MoviesPage} />
         <Route path="/tv" component={TVPage} />
       </Switch>
